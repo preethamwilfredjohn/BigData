@@ -21,13 +21,13 @@ for line in sys.stdin:
 		else:
 			if current_Id:
 				#checking for the authors with more published paper
-				if maxCount is None or maxCount < current_count:
-					maxCount = current_count
-					moreRef[current_Id] = current_count 
+				print ("%s\t%s"% (current_Id,current_count))
 			current_count = count
 			current_Id = Id
 			
 	except:
 		pass	
-#print the output
-print ("%s\t%s" % (moreRef.keys()[0], moreRef.values()[0]))
+#checking for last record
+if current_Id:
+	#checking for the authors with more published paper
+	print ("%s\t%s"% (current_Id,current_count))
